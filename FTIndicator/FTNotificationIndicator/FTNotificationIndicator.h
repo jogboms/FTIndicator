@@ -10,7 +10,7 @@
 
 #pragma mark - FTNotificationIndicator
 
-typedef void (^FTNotificationTapHandler)(void);
+typedef void (^FTNotificationTapHandler)(NSString *);
 typedef void (^FTNotificationCompletion)(void);
 
 /**
@@ -33,42 +33,47 @@ typedef void (^FTNotificationCompletion)(void);
 
  @param title title
  @param message message
+ @param message message
  */
-+ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message;
++ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message intent:(NSString *)intent;
 /**
  showNotificationWithTitle message tapHandler
 
  @param title title
  @param message message
+ @param message message
  @param tapHandler tapHandler
  */
-+ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler;
++ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message intent:(NSString *)intent tapHandler:(FTNotificationTapHandler)tapHandler;
 /**
  showNotificationWithTitle message tapHandler completion
 
  @param title title
  @param message message
+ @param message message
  @param tapHandler tapHandler
  @param completion completion
  */
-+ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion;
++ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message intent:(NSString *)intent tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion;
 /**
  showNotificationWithImage title message
 
  @param image image
  @param title title
  @param message message
+ @param message message
  */
-+ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message;
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message intent:(NSString *)intent;
 /**
  showNotificationWithImage title message tapHandler
 
  @param image image
  @param title title
  @param message message
+ @param message message
  @param tapHandler tapHandler
  */
-+ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler;
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message intent:(NSString *)intent tapHandler:(FTNotificationTapHandler)tapHandler;
 /**
  showNotificationWithImage title message tapHandler completion
 
@@ -76,25 +81,27 @@ typedef void (^FTNotificationCompletion)(void);
  @param image image
  @param title title
  @param message message
+ @param message message
  @param tapHandler tapHandler
  @param completion completion
  */
-+ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion;
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message intent:(NSString *)intent tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion;
 
 
 /**
  showNotificationWithImage title message autoDismiss tapHandler completion
- 
+
  !!!!!!!!!  Only this method suports not dismiss automatically, user has to tap or swipe to dismiss.
 
  @param image image
  @param title title
  @param message message
+ @param message message
  @param autoDismiss autoDismiss
  @param tapHandler tapHandler
  @param completion completion
  */
-+ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message autoDismiss:(BOOL)autoDismiss tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion;
++ (void)showNotificationWithImage:(UIImage *)image title:(NSString *)title message:(NSString *)message intent:(NSString *)intent autoDismiss:(BOOL)autoDismiss tapHandler:(FTNotificationTapHandler)tapHandler completion:(FTNotificationCompletion)completion;
 /**
  dismiss
  */
@@ -113,6 +120,7 @@ typedef void (^FTNotificationCompletion)(void);
 
  @param image image
  @param title title
+ @param message message
  @param message message
  @param style style
  */
